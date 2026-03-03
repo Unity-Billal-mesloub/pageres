@@ -5,15 +5,13 @@
 
 Capture screenshots of websites in various resolutions. A good way to make sure your websites are responsive. It's speedy and generates 100 screenshots from 10 different websites in just over a minute. It can also be used to render SVG images.
 
-*See [pageres-cli](https://github.com/sindresorhus/pageres-cli) for the command-line tool.*
-
 ## Install
 
 ```sh
 npm install pageres
 ```
 
-Note to Linux users: If you get a "No usable sandbox!" error, you need to enable [system sandboxing](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox).
+Note to Linux users: If you get a "No usable sandbox!" error, you need to enable [system sandboxing](https://github.com/Unity-Billal-mesloub/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox).
 
 ## Usage
 
@@ -21,7 +19,7 @@ Note to Linux users: If you get a "No usable sandbox!" error, you need to enable
 import Pageres from 'pageres';
 
 await new Pageres({delay: 2})
-	.source('https://github.com/sindresorhus/pageres', ['480x320', '1024x768'], {crop: true})
+	.source('https://github.com/Unity-Billal-mesloub/pageres', ['480x320', '1024x768'], {crop: true})
 	.source('https://sindresorhus.com', ['1280x1024', '1920x1080'])
 	.source('data:text/html,<h1>Awesome!</h1>', ['1024x768'])
 	.sourceHtml('<h1>Direct HTML!</h1>', ['1024x768'])
@@ -78,7 +76,7 @@ Apply custom JavaScript to the webpage. Specify some JavaScript or the path to a
 
 Type: `Array<string | object>`
 
-A string with the same format as a [browser cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies) or [an object](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagesetcookiecookies).
+A string with the same format as a [browser cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies) or [an object](https://github.com/Unity-Billal-mesloub/puppeteer/blob/master/docs/api.md#pagesetcookiecookies).
 
 Tip: Go to the website you want a cookie for and [copy-paste it from DevTools](https://stackoverflow.com/a/24961735/64949).
 
@@ -92,7 +90,7 @@ For example: `<%= date %> - <%= url %>-<%= size %><%= crop %>`.
 
 Available variables:
 
-- `url`: The URL in [slugified](https://github.com/sindresorhus/filenamify-url) form, eg. `http://yeoman.io/blog/` becomes `yeoman.io!blog`
+
 - `size`: Specified size, eg. `1024x1000`
 - `width`: Width of the specified size, eg. `1024`
 - `height`: Height of the specified size, eg. `1000`
@@ -183,13 +181,13 @@ Emulate preference of dark color scheme.
 Type: `object`\
 Default: `{}`
 
-Options passed to [`puppeteer.launch()`](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions).
+Options passed to [`puppeteer.launch()`](https://github.com/Unity-Billal-mesloub/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions).
 
 ##### beforeScreenshot
 
 Type: `Function`
 
-The specified function is called right before the screenshot is captured, as well as before any bounding rectangle is calculated as part of `options.element`. It receives the Puppeteer [`Page` instance](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#class-page) as the first argument and the [`browser` instance](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#class-browser) as the second argument. This gives you a lot of power to do custom stuff. The function can be async.
+The specified function is called right before the screenshot is captured, as well as before any bounding rectangle is calculated as part of `options.element`. It receives the Puppeteer [`Page` instance](https://github.com/Unity-Billal-mesloub/puppeteer/blob/master/docs/api.md#class-page) as the first argument and the [`browser` instance](https://github.com/Unity-Billal-mesloub/puppeteer/blob/master/docs/api.md#class-browser) as the second argument. This gives you a lot of power to do custom stuff. The function can be async.
 
 Note: Make sure to not call `page.close()` or `browser.close()`.
 
@@ -204,7 +202,7 @@ await new Pageres({
 		await page.waitForSelector('.finished');
 	}
 })
-	.source('https://github.com/sindresorhus/pageres', ['480x320', '1024x768'], {crop: true})
+	.source('https://github.com/Unity-Billal-mesloub/pageres', ['480x320', '1024x768'], {crop: true})
 	.destination('screenshots')
 	.run();
 
@@ -275,14 +273,12 @@ Returns `Promise<Uint8Array[]>`.
 
 ## Task runners
 
-Check out [grunt-pageres](https://github.com/sindresorhus/grunt-pageres) if you're using Grunt.
-
 For Gulp and Broccoli, just use the API directly. No need for a wrapper plugin.
 
 ## Built with Pageres
 
-- [Break Shot](https://github.com/victorferraz/break-shot) - Desktop app for capturing screenshots of responsive websites.
+ - Desktop app for capturing screenshots of responsive websites.
 
 ## Related
 
-- [capture-website](https://github.com/sindresorhus/capture-website) - A different take on screenshotting websites
+ - A different take on screenshotting websites
