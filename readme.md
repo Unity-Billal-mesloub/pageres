@@ -11,7 +11,7 @@ Capture screenshots of websites in various resolutions. A good way to make sure 
 npm install pageres
 ```
 
-Note to Linux users: If you get a "No usable sandbox!" error, you need to enable [system sandboxing](https://github.com/Unity-Billal-mesloub/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox).
+Note to Linux users: If you get a "No usable sandbox!" error, you need to enable [system sandboxing](https://github.com/Unity-Billal-mesloub/puppeteer/blob/main/docs/troubleshooting.md#setting-up-chrome-linux-sandbox).
 
 ## Usage
 
@@ -76,7 +76,7 @@ Apply custom JavaScript to the webpage. Specify some JavaScript or the path to a
 
 Type: `Array<string | object>`
 
-A string with the same format as a [browser cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies) or [an object](https://github.com/Unity-Billal-mesloub/puppeteer/blob/master/docs/api.md#pagesetcookiecookies).
+A string with the same format as a [browser cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies) or [an object](https://github.com/Unity-Billal-mesloub/puppeteer/blob/main/docs/api.md#pagesetcookiecookies).
 
 Tip: Go to the website you want a cookie for and [copy-paste it from DevTools](https://stackoverflow.com/a/24961735/64949).
 
@@ -181,13 +181,13 @@ Emulate preference of dark color scheme.
 Type: `object`\
 Default: `{}`
 
-Options passed to [`puppeteer.launch()`](https://github.com/Unity-Billal-mesloub/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions).
+Options passed to [`puppeteer.launch()`](https://github.com/Unity-Billal-mesloub/puppeteer/blob/main/docs/api.md#puppeteerlaunchoptions).
 
 ##### beforeScreenshot
 
 Type: `Function`
 
-The specified function is called right before the screenshot is captured, as well as before any bounding rectangle is calculated as part of `options.element`. It receives the Puppeteer [`Page` instance](https://github.com/Unity-Billal-mesloub/puppeteer/blob/master/docs/api.md#class-page) as the first argument and the [`browser` instance](https://github.com/Unity-Billal-mesloub/puppeteer/blob/master/docs/api.md#class-browser) as the second argument. This gives you a lot of power to do custom stuff. The function can be async.
+The specified function is called right before the screenshot is captured, as well as before any bounding rectangle is calculated as part of `options.element`. It receives the Puppeteer [`Page` instance](https://github.com/Unity-Billal-mesloub/puppeteer/blob/main/docs/api.md#class-page) as the first argument and the [`browser` instance](https://github.com/Unity-Billal-mesloub/puppeteer/blob/main/docs/api.md#class-browser) as the second argument. This gives you a lot of power to do custom stuff. The function can be async.
 
 Note: Make sure to not call `page.close()` or `browser.close()`.
 
